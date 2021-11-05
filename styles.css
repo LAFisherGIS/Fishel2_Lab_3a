@@ -71,6 +71,11 @@ div.leaflet-popup-tip {
   color: var(--textchroma);
 }
 
+div.leaflet-routing-container {
+  background-color: var(--backgroundchroma);
+  color: var(--textchroma);
+}
+
 #informational {
   color: var(--textchroma);
 }
@@ -122,6 +127,10 @@ body{
 
 /* This variable color must, necessarily, be located outside of the appropriate section to preserve its color*/
 .pagecontent h3{
+  color: var(--textchroma);
+}
+
+.pagecontent h2 {
   color: var(--textchroma);
 }
 

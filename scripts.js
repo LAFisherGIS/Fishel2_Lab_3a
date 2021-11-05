@@ -2,6 +2,7 @@ $(document).ready(modeCheck);
 $(document).ready(mapping);
 
 /* This code is based on Tero Karvinen's reference implementation (https://terokarvinen.com/2018/save-checkbox-state-to-localstorage-javascript-and-jquery-example/) for the use of localStorage to preserve the state of a checkbox between pages and sessions. */
+
 function modeCheck(){
   let checked="true"==localStorage.getItem("status");
   $("#lightordark").prop('checked', checked)
@@ -30,6 +31,29 @@ function mapping(){
                 L.latLng(47.246587, -122.438830),
                 L.latLng(47.318017, -122.542970)
             ],
-             routeWhileDragging: true
+             routeWhileDragging: true,
+             router: L.Routing.mapbox('sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw'),
+             units:'imperial',
+             collapsible: true,
+             show: false,
+             geocoder: L.Control.Geocoder.photon('sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw'),
         }).addTo(map);
+        
+        function createButton(label, container) {
+            var btn = L.DomUtil.create('button', '', container);
+            btn.setAttribute('type', 'button');
+            btn.innerHTML = label;
+            return btn;
+        }
+
+        map.on('click', function(e) {
+            var container = L.DomUtil.create('div'),
+                startBtn = createButton('Start from this location', container),
+                destBtn = createButton('Go to this location', container);
+
+            L.popup()
+                .setContent(container)
+                .setLatLng(e.latlng)
+                .openOn(map);
+         });
 }
