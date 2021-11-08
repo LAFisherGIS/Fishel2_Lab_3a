@@ -11,11 +11,14 @@
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
   crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
+   	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
-	 <script src="scripts.js"></script>
+		<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+	  <script src="scripts.js"></script>
 	</head>
 	<body>
     <div class="headerbar">
@@ -24,8 +27,11 @@
 		    <label for="lightordark" class="modeselect">Lightmode/Darkmode</label>
       <!-- End of lightmode/darkmode HTML-side controls. -->
 		    <div class="pagecontent">
+					<div class="Explanation">
+					<h3>Navigating Pierce County</h3>
+					<p>With the help of this simple map, it's easy to route anywhere you please within Pierce County Washington. To get started, just click where you are right now and select 'Start from this location', then click where you want to go and select 'Go to this location'. Once you've done that, the route you should take will be automatically determined and displayed in a sidebar to the right. Misclicked one of those times? Just click again in the right spot and select the correct option again.</p>
+				</div>
           <div id="map"></div>
-
 		    </div>
 		</div>
 	</body>

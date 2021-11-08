@@ -75,6 +75,15 @@ div.leaflet-popup-tip {
   color: var(--textchroma);
 }
 
+div.leaflet-routing-container.leaflet-bar.leaflet-control {
+  background-color: var(--backgroundchroma);
+  color: var(--textchroma);
+}
+
+col.leaflet-routing-instruction-icon {
+  background-color: var(--backgroundchroma);
+  color: var(--textchroma);
+}
 
 /*
 Fixed Elements This section determines all characteristics of the page not altered by or involved in the lightmode/darkmode selection. All fixed elements of the website live here.
@@ -122,6 +131,10 @@ body{
 
 /* This variable color must, necessarily, be located outside of the appropriate section to preserve its color*/
 .pagecontent h3{
+  color: var(--textchroma);
+}
+
+.pagecontent h2 {
   color: var(--textchroma);
 }
 
