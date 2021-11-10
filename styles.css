@@ -80,6 +80,15 @@ div.leaflet-routing-container {
   color: var(--textchroma);
 }
 
+div.leaflet-routing-container.leaflet-bar.leaflet-control {
+  background-color: var(--backgroundchroma);
+  color: var(--textchroma);
+}
+
+col.leaflet-routing-instruction-icon {
+  background-color: var(--backgroundchroma);
+  color: var(--textchroma);
+}
 
 /*
 Fixed Elements This section determines all characteristics of the page not altered by or involved in the lightmode/darkmode selection. All fixed elements of the website live here.
