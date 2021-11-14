@@ -16,12 +16,15 @@ function modeSet(){
 // End Tero-based scripting
 
 function mapping(){
-  var map = L.map('map').setView([47.25, -122.44], 11);
+  var map = L.map('map', {
+    maxBounds : [[47.42692809746929, -122.85538888556895], [46.61560176506292, -121.11561841555328]],
+    minZoom : 10
+  }).setView([47.25, -122.44], 11);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      attribution: 'Geocoding by &copy; <a href="https://github.com/komoot/photon" target="_null">Photon</a>, Routing by © <a href="https://www.mapbox.com/" target="_null">Mapbox</a>, Map data &copy; <a href="https://www.openstreetmap.org/" target="_null">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_null">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/" target="_null">Mapbox</a>',
       maxZoom: 18,
-      id: 'mapbox/streets-v11',
+      id: 'lafishergis/ckvwv1qz354hp14s8pcasgvi8',
       accessToken: 'sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw',
   }).addTo(map);
 

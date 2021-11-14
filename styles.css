@@ -40,7 +40,6 @@ Mode Selector Styling - This section defines the aesthetic qualities of the chec
   --textchroma: #000000;
   background-color: var(--backgroundchroma);
   color: var(--textchroma);
-  padding-bottom: 3em;
 }
 
 #lightordark:checked ~ .pagecontent{
@@ -181,7 +180,7 @@ a:active{
 }
 
 #map {
-  position: absolute;
+  position: relative;
   width: 99.1vw;
   height: 100vh;
 }
