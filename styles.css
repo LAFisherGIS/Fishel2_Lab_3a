@@ -72,6 +72,11 @@ div.leaflet-popup-tip {
   color: var(--textchroma);
 }
 
+div.leaflet-routing-container {
+  background-color: var(--backgroundchroma);
+  color: var(--textchroma);
+}
+
 #informational {
   color: var(--textchroma);
 }
@@ -177,6 +182,6 @@ a:active{
 
 #map {
   position: absolute;
-  width: 100vw;
+  width: 99.1vw;
   height: 100vh;
 }
