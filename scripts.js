@@ -44,10 +44,10 @@ function mapping(){
   }).addTo(map);
 
   function createButton(label, container) {
-    var btn = L.DomUtil.create('button', '', container);
-    btn.setAttribute('type', 'button');
-    btn.innerHTML = label;
-    return btn;
+      var btn = L.DomUtil.create('button', '', container);
+      btn.setAttribute('type', 'button');
+      btn.innerHTML = label;
+      return btn;
   }
 
   map.on('click', function(e) {
@@ -56,8 +56,8 @@ function mapping(){
       destBtn = createButton('Go to this location', container);
 
       L.popup()
-      .setContent(container)
-      .setLatLng(e.latlng)
+        .setContent(container)
+        .setLatLng(e.latlng)
       .openOn(map);
 
       L.DomEvent.on(startBtn, 'click', function() {
