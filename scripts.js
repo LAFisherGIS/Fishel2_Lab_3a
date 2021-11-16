@@ -29,47 +29,47 @@ function mapping(){
   }).addTo(map);
 
   var control = L.Routing.control({
-             waypoints: [
-              null
-              //L.latLng(47.246587, -122.438830),
-              //L.latLng(47.258024, -122.444725),
-              //L.latLng(47.318017, -122.542970)
-             ],
-             routeWhileDragging: true,
-             router: L.Routing.mapbox('sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw'),
-             units:'imperial',
-             collapsible: true,
-             show: false,
-             geocoder: L.Control.Geocoder.photon('sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw'),
-        }).addTo(map);
+      waypoints: [
+        null
+        //L.latLng(47.246587, -122.438830),
+        //L.latLng(47.258024, -122.444725),
+        //L.latLng(47.318017, -122.542970)
+      ],
+      routeWhileDragging: true,
+      router: L.Routing.mapbox('sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw'),
+      units:'imperial',
+      collapsible: true,
+      show: false,
+      geocoder: L.Control.Geocoder.photon('sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw'),
+  }).addTo(map);
 
-        function createButton(label, container) {
-            var btn = L.DomUtil.create('button', '', container);
-            btn.setAttribute('type', 'button');
-            btn.innerHTML = label;
-            return btn;
-        }
+  function createButton(label, container) {
+    var btn = L.DomUtil.create('button', '', container);
+    btn.setAttribute('type', 'button');
+    btn.innerHTML = label;
+    return btn;
+  }
 
-        map.on('click', function(e) {
-            var container = L.DomUtil.create('div'),
-                startBtn = createButton('Start from this location', container),
-                destBtn = createButton('Go to this location', container);
+  map.on('click', function(e) {
+      var container = L.DomUtil.create('div'),
+      startBtn = createButton('Start from this location', container),
+      destBtn = createButton('Go to this location', container);
 
-            L.popup()
-                .setContent(container)
-                .setLatLng(e.latlng)
-                .openOn(map);
+      L.popup()
+      .setContent(container)
+      .setLatLng(e.latlng)
+      .openOn(map);
 
-            L.DomEvent.on(startBtn, 'click', function() {
-              control.spliceWaypoints(0, 1, e.latlng);
-              map.closePopup();
-            });
+      L.DomEvent.on(startBtn, 'click', function() {
+        control.spliceWaypoints(0, 1, e.latlng);
+        map.closePopup();
+      });
 
-            L.DomEvent.on(destBtn, 'click', function() {
-              control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
-              control.show();
-              map.closePopup();
-            });
+      L.DomEvent.on(destBtn, 'click', function() {
+        control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
+        control.show();
+        map.closePopup();
+      });
 
-        });
+  });
 }
